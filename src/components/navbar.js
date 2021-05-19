@@ -15,6 +15,7 @@ import {
     Button
 } from 'reactstrap';
 import { Link } from 'react-router-dom'
+import { connect } from 'react-redux'
 
 class NavbarComp extends Component {
     constructor(props) {
@@ -62,8 +63,8 @@ class NavbarComp extends Component {
                                 </UncontrolledDropdown>
                             </Nav>
                             {
-                                localStorage.getItem('tkn_name') ?
-                                    localStorage.getItem('tkn_name') :
+                               this.props.username ?
+                                    this.props.username :
                                     <>
                                         <Link to="/login" className="btn btn-primary btn-sm">Sign In</Link>
                                         <Link to="/register" className="btn btn-outline-info btn-sm">Register</Link>
@@ -77,4 +78,10 @@ class NavbarComp extends Component {
     }
 }
 
-export default NavbarComp;
+const mapToProps = (state) => {
+    return {
+        username: state.userReducer.username
+    }
+}
+
+export default connect(mapToProps)(NavbarComp);

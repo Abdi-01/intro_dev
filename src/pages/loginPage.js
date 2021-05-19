@@ -3,6 +3,8 @@ import React from 'react';
 import { Redirect } from 'react-router-dom';
 import { Button, Form, FormGroup, Label, Input, FormText, InputGroup, InputGroupAddon, InputGroupText, Jumbotron } from 'reactstrap';
 import { API } from '../helper';
+import { loginAction } from '../actions';
+import { connect } from 'react-redux';
 
 class LoginPage extends React.Component {
     constructor(props) {
@@ -28,8 +30,10 @@ class LoginPage extends React.Component {
                 if (res.data.length > 0) {
                     // menyimpan data kedalam browser
                     localStorage.setItem("tkn_name", res.data[0].username)
+                    // menyimpan data kedalam reducer atau global store
+                    this.props.loginAction(res.data[0])
                     // alert(`Hello, ${res.data[0].username}. Login Success ✔`)
-                    this.setState({ redirect: true })
+                    // this.setState({ redirect: true })
                 } else {
                     alert(`User not found ❌`)
                 }
@@ -39,7 +43,7 @@ class LoginPage extends React.Component {
     }
 
     render() {
-        if (this.state.redirect) {
+        if (this.props.iduser) {
             return <Redirect to="/" />
         }
         return (<div className="container m-auto row" style={{ paddingTop: '10vh' }}>
@@ -76,4 +80,11 @@ class LoginPage extends React.Component {
     }
 }
 
-export default LoginPage;
+// fungsi untuk mengambil data dari global storage
+const mapToProps = (state) => {
+    return {
+        iduser: state.userReducer.id
+    }
+}
+
+export default connect(mapToProps, { loginAction })(LoginPage);
