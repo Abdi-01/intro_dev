@@ -21,5 +21,43 @@
       "role": "user",
       "id": 3
     }
+  ],
+  "album": [
+    {
+      "title": "GoWes",
+      "description": "Spain’s passion for cycling has had a tendency for ascendency ever since the days of Federico Bahamontes, the ‘Eagle of Toledo’. To further prove that point is The Draft, a new custom bike boutique in Madrid — just have a look at their Comet Eater all-roader. The Draft is a workshop, cafe, clubhouse and shop…",
+      "image": "https://i.pinimg.com/564x/28/e3/1b/28e31b8eff0ffe247fa9c2afd7a1cf8c.jpg",
+      "id": 1
+    },
+    {
+      "title": "SunMori",
+      "description": "Custom Cruiser E-bikes by Innovative French Cycle lover",
+      "image": "https://i.pinimg.com/564x/fe/fe/1b/fefe1b75489ddb4ddc8df89c419717a4.jpg",
+      "id": 2
+    },
+    {
+      "title": "Drag",
+      "description": "Gravity Bike: Howdy, We are S.I.N. Cycles builders of gravity fueled machines",
+      "image": "https://i.pinimg.com/564x/04/82/ff/0482ff4312dae87b9bbc54c3013bb1ad.jpg",
+      "id": 3
+    },
+    {
+      "title": "Chopper",
+      "description": "I've always liked this bike.",
+      "image": "https://i.pinimg.com/564x/b2/a2/dc/b2a2dc2894cd3da0df560353434d1710.jpg",
+      "id": 4
+    },
+    {
+      "title": "Mini",
+      "description": "Find the perfect handmade gift, vintage & on-trend clothes, unique jewelry, and more",
+      "image": "https://i.pinimg.com/564x/31/11/99/31119965f371cc4ef9f4c4816a424e8c.jpg",
+      "id": 5
+    },
+    {
+      "title": "Go Go GO",
+      "description": "A real boss Hoss Car Craft November 1967",
+      "image": "https://i.pinimg.com/564x/e0/07/75/e0077511ab81db99f7143948c906f179.jpg",
+      "id": 6
+    }
   ]
 }

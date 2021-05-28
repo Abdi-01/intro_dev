@@ -16,6 +16,7 @@ import {
 } from 'reactstrap';
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
+import { logoutAction } from '../actions'
 
 class NavbarComp extends Component {
     constructor(props) {
@@ -63,8 +64,24 @@ class NavbarComp extends Component {
                                 </UncontrolledDropdown>
                             </Nav>
                             {
-                               this.props.username ?
-                                    this.props.username :
+                                this.props.username ?
+                                    <UncontrolledDropdown>
+                                        <DropdownToggle outline color="info" caret style={{ fontWeight: 'bold' }}>
+                                            Welcome, {this.props.username}
+                                        </DropdownToggle>
+                                        <DropdownMenu right>
+                                            <DropdownItem>
+                                                Option 1
+                                            </DropdownItem>
+                                            <DropdownItem>
+                                                Option 2
+                                            </DropdownItem>
+                                            <DropdownItem divider />
+                                            <DropdownItem onClick={this.props.logoutAction}>
+                                                Sign Out
+                                            </DropdownItem>
+                                        </DropdownMenu>
+                                    </UncontrolledDropdown> :
                                     <>
                                         <Link to="/login" className="btn btn-primary btn-sm">Sign In</Link>
                                         <Link to="/register" className="btn btn-outline-info btn-sm">Register</Link>
@@ -84,4 +101,4 @@ const mapToProps = (state) => {
     }
 }
 
-export default connect(mapToProps)(NavbarComp);
+export default connect(mapToProps, { logoutAction })(NavbarComp);

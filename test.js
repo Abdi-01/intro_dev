@@ -8,6 +8,7 @@ let dataUserNew = {
     password: '123',
     role: 'user'
 }
+
 let dataUpdate = { ...dataUser, ...dataUserNew }
 console.log(dataUser, dataUserNew)
 console.log(dataUpdate)

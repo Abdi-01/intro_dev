@@ -11,6 +11,8 @@ export const userReducer = (state = INITIAL_STATE, action) => {
             console.log("Data masuk reducer :", action.payload)
             // spread operator dan concat
             return { ...state, ...action.payload }
+        case "LOGOUT":
+            return INITIAL_STATE
         default:
             return state
     }
